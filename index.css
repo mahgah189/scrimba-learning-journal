@@ -1,0 +1,282 @@
+body {
+    font-family: "Source Sans 3", sans-serif;
+    margin: 0;
+}
+
+/* Header styling */
+
+.header {
+    display: grid;
+    grid-template-columns: auto auto 1fr auto auto;
+    padding: 0.8em 3.125em;
+    align-items: center;
+}
+
+.header a {
+    text-decoration: none;
+}
+
+.header a:visited {
+    color: inherit;
+}
+
+.header a:hover {
+    text-decoration: underline;
+}
+
+.logo-text {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-size: 1.25rem;
+    padding-left: 0.3em;
+}
+
+.header-link {
+    grid-column: 4 / 5;
+}
+
+.about-link {
+    grid-column: 5 / 6;
+}
+
+.header-link,
+.about-link {
+    font-size: 1.05rem;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+/* Banner styling */
+
+.hero-banner {
+    display: grid;
+    grid-template-columns: minmax(40vw, 60vw) 30vw;
+    grid-template-rows: 350px auto auto;
+    grid-gap: 1em;
+    padding: 3em;
+    background-image: url("images/blog-image-hero.png");
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.hero-banner p, h1 {
+    margin: 0;
+}
+
+.date {
+    align-self: self-end;
+}
+
+.hero-banner h1 {
+    grid-row: 2;
+    font-size: 2rem;
+}
+
+.banner-subtext {
+    grid-row: 3;
+    font-size: 0.9rem;
+}
+
+/* Blog grid */
+
+.blogs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 1em;
+    margin: 3em;
+}
+
+.blog-container h2 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+.blog-container img {
+    width: 100%;
+}
+
+.blog-date {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.blog-description {
+    margin: 0;
+}
+
+.view-btn {
+    grid-column: 2;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: underline;
+    padding-top: 2em;
+    margin: auto;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.view-btn:hover {
+    color: #343434;
+}
+
+/* Footer styling */
+
+footer {
+    display: grid;
+    color: #ECECEC;
+    background-color: #202020;
+}
+
+footer p {
+    margin: 0 auto;
+}
+
+.footer-top-text {
+    padding-top: 2.5em;
+    font-weight: bold;
+}
+
+.footer-bottom-text {
+    padding-bottom: 2.5em;
+}
+
+/* JS related classes */
+
+.hide-element {
+    display: none;
+}
+
+/* Media query for tablet */
+
+@media (min-width: 600px) and (max-width: 877px) {
+
+    /* Banner styling */
+
+    .hero-banner {
+        grid-template-columns: 1fr 20vw;
+        grid-template-rows: 250px auto auto;
+        grid-gap: 0.8em;
+        padding: 2.5em;
+        background: linear-gradient(
+            rgba(0, 0, 0, 0.2), 
+            rgba(0, 0, 0, 0.2)
+          ), url("images/article-image-hero.png");
+        background-size: cover;
+    }
+
+    .hero-banner h1 {
+        line-height: 1.2;
+    }
+
+    .banner-subtext {
+        grid-column: 1 / 3;
+        font-size: 1.1rem;
+        line-height: 1.2;
+    }
+
+    /* Blog grid */
+
+    .blogs {
+        grid-gap: 2.5em;
+        margin: 2.5em 1.5em;
+    }
+
+    .view-btn {
+        grid-column: 1 / 3;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+/* Media query for mobile */
+
+@media (max-width: 599px) {
+
+    /* Header styling */
+
+    body {
+        min-width: 480px;
+    }
+
+    .header {
+        padding: 0.8em 2em;
+    }
+
+    .logo {
+        width: 2em;
+        height: 2em;
+    }
+
+    .logo-text {
+        font-size: 1.1rem;
+    }
+
+    .about-link {
+        padding-right: 0;
+    }
+
+    .header-link,
+    .about-link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    }
+
+    /* Banner styling */
+
+    .hero-banner {
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px auto auto;
+        grid-gap: 0.8em;
+        padding: 1.5em;
+        background: linear-gradient(
+            rgba(0, 0, 0, 0.2), 
+            rgba(0, 0, 0, 0.2)
+          ), url("images/article-image-hero.png");
+        background-size: cover;
+    }
+
+    .hero-banner h1 {
+        line-height: 1.2;
+    }
+
+    .banner-subtext {
+        font-size: 1.1rem;
+        line-height: 1.2;
+    }
+
+    /* Blog grid */
+
+    .blogs {
+        grid-gap: 2.5em;
+        margin: 2.5em 1.5em;
+    }
+
+    .blog-container,
+    .view-btn {
+        grid-column: 1;
+    }
+
+    .blog-date {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    .blog-container h2 {
+        margin-top: 0;
+        margin-bottom: 0.25em;
+    }
+
+    .blog-description {
+        font-size: 1.05rem;
+        font-weight: 300;
+        line-height: 1.2;
+    }
+
+    .view-btn{
+        padding-top: 0;
+    }
+
+}
