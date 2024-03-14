@@ -6,10 +6,15 @@ body {
 /* Header styling */
 
 .header {
+    position: fixed;
+    background: white;
+    width: 100%;
+    box-sizing: border-box;
     display: grid;
     grid-template-columns: auto auto 1fr auto auto;
     padding: 0.8em 3.125em;
     align-items: center;
+    z-index: 1;
 }
 
 .header a {
@@ -44,6 +49,52 @@ body {
     font-size: 1.05rem;
     padding-left: 1em;
     padding-right: 1em;
+}
+
+.hamburger-menu-icon {
+    display: none;
+    grid-column: 5 / 6;
+    max-height: 3em;
+    cursor: pointer;
+}
+
+/* Hamburger menu modal */
+
+.hamburger-menu {
+    display: grid;
+    background: white;
+    position: fixed;
+    min-width: 80vw;
+    max-width: 80vw;
+    right: 0;
+    top: 5.5em;
+    z-index: 1;
+    box-shadow: 0 1px 12px -5px inset rgba(0, 0, 0, 0.7);
+}
+
+.hamburger-link {
+    padding: 2em 1em 2em 4em;
+    font-size: 1.05rem;
+    text-decoration: none;
+    border-bottom: 1px solid #bdbdbd;
+    cursor: pointer;
+}
+
+.hamburger-link:visited {
+    color: inherit;
+}
+
+.hamburger-link:hover {
+    background: #f4f4f4;
+}
+
+.overlay-shadow {
+    position: fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color: rgba(0,0,0,.3);
 }
 
 /* Banner styling */
@@ -82,7 +133,7 @@ body {
 
 .blogs {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(21.875em, 1fr));
     grid-gap: 1em;
     margin: 3em;
 }
@@ -110,7 +161,6 @@ body {
     font-size: 1.1rem;
     font-weight: bold;
     text-decoration: underline;
-    padding-top: 2em;
     margin: auto;
     border: none;
     background-color: white;
@@ -119,6 +169,11 @@ body {
 
 .view-btn:hover {
     color: #343434;
+}
+
+.view-btn-container {
+    text-align: center;
+    padding-bottom: 3em;
 }
 
 /* Footer styling */
@@ -150,7 +205,18 @@ footer p {
 
 /* Media query for tablet */
 
-@media (min-width: 600px) and (max-width: 877px) {
+@media (min-width: 600px) and (max-width: 787px) {
+
+    /* Hamburger menu */
+
+    .header-link,
+    .about-link {
+        display: none;
+    }
+
+    .hamburger-menu-icon {
+        display: block;
+    }
 
     /* Banner styling */
 
@@ -203,6 +269,7 @@ footer p {
 
     .header {
         padding: 0.8em 2em;
+        height: 12.5vh;
     }
 
     .logo {
@@ -214,14 +281,14 @@ footer p {
         font-size: 1.1rem;
     }
 
-    .about-link {
-        padding-right: 0;
-    }
-
     .header-link,
     .about-link {
-    font-size: 0.9rem;
-    font-weight: 500;
+        display: none;
+    }
+
+    .hamburger-menu-icon {
+        display: block;
+        max-height: 2.5em;
     }
 
     /* Banner styling */

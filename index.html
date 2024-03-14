@@ -15,7 +15,15 @@
         <p class="logo-text">My learning journal</p>
         <a href="index.html" class="header-link">HOME</a>
         <a href="about.html" class="about-link">ABOUT ME</a>
+        <img class="hamburger-menu-icon" src="images/Hamburger_icon.png" alt="A selectable 3-line icon that opens a menu modal on smaller screens." data-btn="hamburger-menu" />
     </header>
+
+    <section class="hamburger-menu hide-element" id="hamburger-menu">
+        <a href="index.html" class="hamburger-link">HOME</a>
+        <a href="about.html" class="hamburger-link">ABOUT ME</a>
+    </section>
+
+    <div class="overlay-shadow hide-element" id="overlay-shadow" data-btn="hamburger-menu-shadow"></div>
 
     <section class="hero-banner" role="img" aria-label="A dimly lit background image showing a laptop on a desk under warm, lamp lighting against a window background">
         <p class="date">JULY 23, 2022</p>
@@ -29,9 +37,12 @@
             <p class="blog-date">JULY 23, 2022</p>
             <h2>Blog one</h2>
             <p class="blog-description">I'm excited to start a new learning journey as a Scrimba Bootcamp student! After several months of learning in the Frontend Developer Career Path.</p>
-        </div>
-        <button class="view-btn" data-btn="viewMore">View more</button> -->
-    </section>
+        </div> -->
+    </section> 
+
+    <div class="view-btn-container" id="view-btn-container">
+        <!-- <button class="view-btn" data-btn="viewMore">View more</button> -->
+    </div>
 
     <footer>
         <p class="footer-top-text">My Learning Journal</p>

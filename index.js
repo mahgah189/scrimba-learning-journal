@@ -1,6 +1,12 @@
 import { blogArray } from '/blogposts.js';
 
 const blogContainer = document.getElementById('blogs');
+const viewBtnContainer = document.getElementById('view-btn-container');
+const hamburgerMenuModal = document.getElementById('hamburger-menu');
+const hamburgerMenuShadow = document.getElementById('overlay-shadow');
+
+const hamburgerClasslist = hamburgerMenuModal.classList;
+const shadowClasslist = hamburgerMenuShadow.classList;
 
 renderBlogs(blogArray, 6);
 
@@ -13,7 +19,12 @@ document.addEventListener('click', function(e) {
         renderBlogs(blogArray);
     } else if (dataBtn === 'hide') {
         renderBlogs(blogArray, 6);
-    };
+    } else if (dataBtn === 'hamburger-menu') {
+        hamburgerMenuToggle();
+    } else if (dataBtn === 'hamburger-menu-shadow') {
+        hamburgerClasslist.add('hide-element');
+        shadowClasslist.add('hide-element');
+    }
 
 });
 
@@ -22,6 +33,7 @@ document.addEventListener('click', function(e) {
 function renderBlogs(blogArr, renderVal = blogArr.length) {
 
     blogContainer.innerHTML = ``;
+    viewBtnContainer.innerHTML = ``;
 
     for (let i = 0; i < renderVal; i++) {
         blogContainer.innerHTML += `
@@ -35,13 +47,24 @@ function renderBlogs(blogArr, renderVal = blogArr.length) {
     };
 
     if (renderVal === blogArr.length) {
-        blogContainer.innerHTML += `
+        viewBtnContainer.innerHTML += `
             <button class="view-btn" data-btn="hide">Hide</button>
          `;
     } else {
-        blogContainer.innerHTML += `
+        viewBtnContainer.innerHTML += `
             <button class="view-btn" data-btn="viewMore">View more</button>
         `;
     }
 
 };
+
+function hamburgerMenuToggle() {
+
+    if (hamburgerClasslist.contains('hide-element')) {
+        hamburgerClasslist.remove('hide-element');
+        shadowClasslist.remove('hide-element');
+    } else {
+        hamburgerClasslist.add('hide-element');
+        shadowClasslist.add('hide-element');
+    };
+}
