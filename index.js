@@ -8,7 +8,9 @@ const hamburgerMenuShadow = document.getElementById('overlay-shadow');
 const hamburgerClasslist = hamburgerMenuModal.classList;
 const shadowClasslist = hamburgerMenuShadow.classList;
 
-renderBlogs(blogArray, 6);
+if (document.URL.includes('index.html')) {
+    renderBlogs(blogArray, 6);
+}
 
 // event listener for view more / hide button. Targeting dataset because the buttons are rendered dynamically
 

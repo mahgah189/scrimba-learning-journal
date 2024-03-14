@@ -1,6 +1,7 @@
 body {
     font-family: "Source Sans 3", sans-serif;
     margin: 0;
+    background-color: #FAFAFA;
 }
 
 /* Header styling */
@@ -174,6 +175,12 @@ body {
 .view-btn-container {
     text-align: center;
     padding-bottom: 3em;
+}
+
+/* About me styling */
+
+.about-intro {
+    padding: 10em 5em 3em;
 }
 
 /* Footer styling */
