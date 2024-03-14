@@ -8,7 +8,7 @@ const hamburgerMenuShadow = document.getElementById('overlay-shadow');
 const hamburgerClasslist = hamburgerMenuModal.classList;
 const shadowClasslist = hamburgerMenuShadow.classList;
 
-if (document.URL.includes('index.html')) {
+if (!document.URL.includes('about')) {
     renderBlogs(blogArray, 6);
 }
 
